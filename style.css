@@ -558,7 +558,7 @@ body {
 .smiley__icon {
     position: absolute;
     bottom: 180px;
-    left: 50vw;
+    left: 45vw;
     transform: translateX(-50%) scale(0);
     animation: scaleCricle 3s 15s forwards ease-in-out;
 }
@@ -905,7 +905,7 @@ body {
 
     .smiley__icon {
         left: 50%;
-        bottom: 120px;
+        bottom: 50px;
         transform: translateX(-50%) scale(0);
         animation: scaleCricle 3s 15s forwards ease-in-out;
         animation-delay: 17s !important;

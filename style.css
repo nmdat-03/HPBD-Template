@@ -204,8 +204,9 @@ body {
     color: var(--color-text-pink);
 }
 
-.title .hat {
+.title .hat img{
     position: absolute;
+    width: 130px;
     right: 30px;
     top: -350px;
     transform: rotate(-40deg);
@@ -529,6 +530,7 @@ body {
     position: absolute;
     right: 0;
     bottom: -10px;
+    z-index: -1;
 }
 
 .decorate_flower--one {
@@ -857,8 +859,8 @@ body {
         display: flex;
         justify-content: center;
         font-family: "Titan One", sans-serif;
-        font-size: 2rem;
-        line-height: 5rem;
+        font-size: 1.5rem;
+        line-height: 4rem;
         letter-spacing: 8px;
         flex-direction: column;
         perspective: 1000px;
@@ -894,9 +896,10 @@ body {
         animation: scaleCricle 3s 15s forwards ease-in-out;
     }
 
-    .title .hat {
+    .title .hat img{
         position: absolute;
-        right: -98px;
+        width: 80px;
+        right: -60px;
         top: -250px;
         transform: rotate(-40deg);
         z-index: -1;
@@ -904,8 +907,8 @@ body {
     }
 
     .smiley__icon {
-        left: 50%;
-        bottom: 50px;
+        left: 40%;
+        bottom: 10px;
         transform: translateX(-50%) scale(0);
         animation: scaleCricle 3s 15s forwards ease-in-out;
         animation-delay: 17s !important;
@@ -943,6 +946,17 @@ body {
     .decorate_flower--two,
     .decorate_flower--three {
         animation-delay: calc(var(--t) + 2s) !important;
+    }
+
+    .decorate_star.star1 {
+        top: 8%;
+        left: 50%
+    }
+
+    .decorate_star.star5 {
+        top: 85%;
+        right: 60%;
+        left: auto;
     }
 
     .content .right .image {

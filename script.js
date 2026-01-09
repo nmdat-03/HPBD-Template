@@ -1,3 +1,20 @@
+function setVh() {
+  const vh = window.visualViewport
+    ? window.visualViewport.height * 0.01
+    : window.innerHeight * 0.01;
+
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+
+setVh();
+
+if (window.visualViewport) {
+  visualViewport.addEventListener("resize", setVh);
+  visualViewport.addEventListener("scroll", setVh);
+} else {
+  window.addEventListener("resize", setVh);
+}
+
 let datetxt = "10 / 01 / 2026";
 let charArrDate = datetxt.split("");
 let currentIndex = 0;
@@ -28,24 +45,26 @@ let isMailOpened = false;
 
 mailBox.addEventListener("click", function () {
   boxmail.classList.add("active");
-});
 
-mailContainer.addEventListener("click", function () {
   if (isMailOpened) return;
-
   isMailOpened = true;
-  boxmail.classList.add("open");
 
-  music.currentTime = 0;
-  music.play();
-  musicBtn.classList.add("playing");
-  musicBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-  isPlaying = true;
+  setTimeout(() => {
+    boxmail.classList.add("open");
 
-  setTimeout(startTyping, OPEN_DELAY);
+    music.currentTime = 0;
+    music.play();
+    musicBtn.classList.add("playing");
+    musicBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    isPlaying = true;
+
+    setTimeout(startTyping, OPEN_DELAY);
+  }, 3000);
 });
 
-closeBtn.addEventListener("click", function () {
+closeBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+
   boxmail.classList.remove("active");
   boxmail.classList.remove("open");
   isMailOpened = false;
@@ -82,7 +101,7 @@ musicBtn.addEventListener("click", () => {
 /* ------------------------------------------ */
 /*              CARD CONTENT                  */
 /* ------------------------------------------ */
-const titleText = "Đến: Anh Thư 💖";
+const titleText = "Đến: name 💖";
 const bodyText = `Chúc em tuổi mới luôn xinh đẹp, rạng rỡ, và thật tự tin trên con đường mà mình đã chọn.
 
 Mong rằng tuổi mới sẽ mang đến cho em thật nhiều niềm vui, những điều bất ngờ ngọt ngào, và mọi ước mơ của em sẽ sớm thành hiện thực. Happy birthday 🎉`;
@@ -191,12 +210,17 @@ if (window.innerWidth < 768) {
 const c = document.getElementById("stars"),
   ctx = c.getContext("2d");
 
-function resize() {
-  c.width = innerWidth;
-  c.height = innerHeight;
+function resizeCanvas() {
+  const dpr = window.devicePixelRatio || 1;
+  c.width = innerWidth * dpr;
+  c.height = innerHeight * dpr;
+  c.style.width = innerWidth + "px";
+  c.style.height = innerHeight + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
-resize();
-addEventListener("resize", resize);
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 let stars = [];
 let starCount = window.innerWidth < 768 ? 60 : 150;
@@ -225,3 +249,4 @@ function drawStars() {
   requestAnimationFrame(drawStars);
 }
 drawStars();
+

@@ -41,8 +41,8 @@ body {
 
 #wrapper {
     position: relative;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: 100%;
     background-size: 80px 80px;
     overflow: hidden;
@@ -204,7 +204,7 @@ body {
     color: var(--color-text-pink);
 }
 
-.title .hat img{
+.title .hat img {
     position: absolute;
     width: 130px;
     right: 30px;
@@ -565,6 +565,13 @@ body {
     animation: scaleCricle 3s 15s forwards ease-in-out;
 }
 
+#wrapper,
+#stars,
+#heart-layer,
+.boxMail {
+    height: 100dvh;
+}
+
 .boxMail {
     position: fixed;
     background: rgb(0, 0, 0, 0.8);
@@ -777,19 +784,19 @@ body {
 #heart-layer {
     position: fixed;
     inset: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100dvh;
     overflow: hidden;
 }
 
 @keyframes floatHeart {
     from {
-        transform: translateY(100vh) scale(0.5);
+        transform: translateY(100dvh) scale(0.5);
         opacity: 1;
     }
 
     to {
-        transform: translateY(-10vh) scale(1.2);
+        transform: translateY(-10dvh) scale(1.2);
         opacity: 0;
     }
 }
@@ -896,7 +903,7 @@ body {
         animation: scaleCricle 3s 15s forwards ease-in-out;
     }
 
-    .title .hat img{
+    .title .hat img {
         position: absolute;
         width: 80px;
         right: -60px;
@@ -996,6 +1003,14 @@ body {
 
     .right .balloon_one img {
         width: 76px !important;
+    }
+
+    .boxMail {
+        touch-action: manipulation;
+    }
+
+    .boxMail-container {
+        pointer-events: auto;
     }
 
     .boxMail .boxMail-container {

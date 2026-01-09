@@ -479,6 +479,7 @@ body {
     clip-path: polygon(0 50%, 35% 35%, 50% 0, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%);
     animation: scaleCricle 3s var(--t) forwards,
         scaleStar 2s 16s infinite ease-in-out;
+    z-index: -1;
 }
 
 .decorate_star.star1 {

@@ -907,7 +907,7 @@ body {
         position: absolute;
         width: 80px;
         right: -60px;
-        top: -120px;
+        top: -250px;
         transform: rotate(-40deg);
         z-index: -1;
         animation: topHat 4s 7s forwards ease;

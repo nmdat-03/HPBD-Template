@@ -907,7 +907,7 @@ body {
         position: absolute;
         width: 80px;
         right: -60px;
-        top: -250px;
+        top: -120px;
         transform: rotate(-40deg);
         z-index: -1;
         animation: topHat 4s 7s forwards ease;
@@ -923,7 +923,7 @@ body {
     }
 
     .decorate_flower--one {
-        top: 12%;
+        top: 15%;
         left: 5%;
         transform: scale(0);
         animation: scaleCricle 3s var(--t) forwards ease-in-out;
@@ -957,8 +957,13 @@ body {
     }
 
     .decorate_star.star2 {
-        top: 8%;
-        left: 30%
+        top: 43%;
+        left: 10%
+    }
+
+    .decorate_star.star3 {
+        top: 42%;
+        left: 85%
     }
 
     .decorate_star.star5 {

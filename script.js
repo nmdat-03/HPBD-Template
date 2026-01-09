@@ -101,7 +101,7 @@ musicBtn.addEventListener("click", () => {
 /* ------------------------------------------ */
 /*              CARD CONTENT                  */
 /* ------------------------------------------ */
-const titleText = "Đến: name 💖";
+const titleText = "Đến: Anh Thư 💖";
 const bodyText = `Chúc em tuổi mới luôn xinh đẹp, rạng rỡ, và thật tự tin trên con đường mà mình đã chọn.
 
 Mong rằng tuổi mới sẽ mang đến cho em thật nhiều niềm vui, những điều bất ngờ ngọt ngào, và mọi ước mơ của em sẽ sớm thành hiện thực. Happy birthday 🎉`;

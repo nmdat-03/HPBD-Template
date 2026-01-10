@@ -605,7 +605,6 @@ body {
     -webkit-perspective: 2000px;
     perspective: 2000px;
     transition: all 0.5s;
-    cursor: pointer;
 }
 
 .boxMail .boxMail-container .card1,
@@ -1037,6 +1036,10 @@ body {
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
         backface-visibility: hidden;
+    }
+
+    .title-text, .body-text, .typing-signature {
+        font-size: 26px;
     }
 
 }
